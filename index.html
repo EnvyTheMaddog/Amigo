@@ -25,21 +25,24 @@
             Only we know the way in.
         </p>
 
+       <form id="login-form">
+
         <input
             type="password"
             id="password"
             placeholder="Enter the code"
+            autocomplete="off"
         >
-
-        <button onclick="unlock()">
+    
+        <button type="submit">
             Enter ♡
         </button>
-
-        <p class="hint">
-            Hint: Miga's birthday 🎂
-        </p>
-
-        <p id="error"></p>
+    
+    </form>
+    
+    <p class="hint">Hint: Miga's birthday 🎂</p>
+    
+    <p id="error"></p>
 
     </div>
 
