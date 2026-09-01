@@ -35,7 +35,30 @@ lightbox.addEventListener("click", (event) => {
 
 });
 
+function unlock() {
 
+    const input = document.getElementById("password");
+    const lockScreen = document.getElementById("lock-screen");
+    const error = document.getElementById("error");
+
+    const correctCode = "20061205";
+
+    if (input.value === correctCode) {
+
+        lockScreen.style.opacity = "0";
+
+        setTimeout(() => {
+            lockScreen.style.display = "none";
+        }, 500);
+
+    } else {
+
+        error.textContent = "Yee chi meddeggvi ym uu ToT";
+
+        input.value = "";
+
+    }
+}
 document.addEventListener("keydown", (event) => {
 
     if (event.key === "Escape") {
