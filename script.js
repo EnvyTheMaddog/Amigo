@@ -36,14 +36,22 @@ lightbox.addEventListener("click", (event) => {
 });
 
 
-function unlock() {
-    const input = document.getElementById("password");
-    const lockScreen = document.getElementById("lock-screen");
-    const error = document.getElementById("error");
+// PASSWORD / LOGIN
 
-    const correctCode = "26082007"; // change this
+const form = document.getElementById("login-form");
+const input = document.getElementById("password");
+const lockScreen = document.getElementById("lock-screen");
+const error = document.getElementById("error");
+
+const correctCode = "26082007"; // CHANGE THIS TO HER BIRTHDAY
+
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
 
     if (input.value.trim() === correctCode) {
+
         lockScreen.style.transition = "opacity 0.5s ease";
         lockScreen.style.opacity = "0";
 
@@ -52,23 +60,11 @@ function unlock() {
         }, 500);
 
     } else {
+
         error.textContent = "Hmm... that's not it ♡";
+
         input.value = "";
-
-        // Make it obvious on mobile
         input.focus();
-    }
-}
-
-
-// Allow Enter/Go on phone keyboard
-document.getElementById("password").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        unlock();
-    }
-});
-        lightbox.classList.remove("active");
 
     }
 
