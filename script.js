@@ -61,7 +61,7 @@ form.addEventListener("submit", function(event) {
 
     } else {
 
-    error.innerHTML = "Hmm... that's not it ♡";
+    error.innerHTML = "Ooh no chi meddeggui ym uu ToT";
     error.style.display = "block";
     error.style.visibility = "visible";
     error.style.opacity = "1";
