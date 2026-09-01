@@ -43,7 +43,7 @@ const input = document.getElementById("password");
 const lockScreen = document.getElementById("lock-screen");
 const error = document.getElementById("error");
 
-const correctCode = "26082007"; // CHANGE THIS TO HER BIRTHDAY
+const correctCode = "20061205"; // CHANGE THIS TO HER BIRTHDAY
 
 
 form.addEventListener("submit", function(event) {
