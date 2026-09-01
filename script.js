@@ -61,11 +61,14 @@ form.addEventListener("submit", function(event) {
 
     } else {
 
-        error.textContent = "Hmm... that's not it ♡";
+    error.innerHTML = "Hmm... that's not it ♡";
+    error.style.display = "block";
+    error.style.visibility = "visible";
+    error.style.opacity = "1";
 
-        input.value = "";
-        input.focus();
+    input.value = "";
+    input.focus();
 
-    }
+}
 
 });
