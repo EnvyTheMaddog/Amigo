@@ -109,11 +109,15 @@ html {
 }
 
 #error {
-    margin-top: 15px;
+    display: block;
+    min-height: 20px;
+    margin: 15px 0 0;
 
-    font-size: 12px;
-
+    font-size: 14px;
     color: #ff8f8f;
+
+    opacity: 1;
+    visibility: visible;
 }
 
 body {
