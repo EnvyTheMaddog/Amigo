@@ -35,16 +35,16 @@ lightbox.addEventListener("click", (event) => {
 
 });
 
-function unlock() {
 
+function unlock() {
     const input = document.getElementById("password");
     const lockScreen = document.getElementById("lock-screen");
     const error = document.getElementById("error");
 
-    const correctCode = "20061205";
+    const correctCode = "26082007"; // change this
 
-    if (input.value === correctCode) {
-
+    if (input.value.trim() === correctCode) {
+        lockScreen.style.transition = "opacity 0.5s ease";
         lockScreen.style.opacity = "0";
 
         setTimeout(() => {
@@ -52,17 +52,22 @@ function unlock() {
         }, 500);
 
     } else {
-
-        error.textContent = "Yee chi meddeggvi ym uu ToT";
-
+        error.textContent = "Hmm... that's not it ♡";
         input.value = "";
 
+        // Make it obvious on mobile
+        input.focus();
     }
 }
-document.addEventListener("keydown", (event) => {
 
-    if (event.key === "Escape") {
 
+// Allow Enter/Go on phone keyboard
+document.getElementById("password").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        unlock();
+    }
+});
         lightbox.classList.remove("active");
 
     }
